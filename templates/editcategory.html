@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<html>
+
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body>
+
+<h1> Edit Category </h1>
+<div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li> <strong> {{ message }} </strong> </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+</div>
+
+<form action="{{ url_for('editCategory',category_id = category.category_id)}}" method = 'post'>
+<label for="name">Name:</label>
+		<input type ="text" maxlength="100" class="form-control" name="name" value="{{category.category_name }}">
+		<button class="btn btn-default" id="edit-category">
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
+			</button>
+
+		<a href = "{{ url_for('showCategoryItems', category_id=category.category_id) }}"> Cancel </a>
+
+</form>
+</body>
+
+</html>
+{% endblock %}

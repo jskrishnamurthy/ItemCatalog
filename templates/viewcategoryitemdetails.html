@@ -1,0 +1,30 @@
+<html>
+
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body>
+
+<h1> {{category.category_name }} - {{category_item.title}}</h1>
+
+
+<form action="{{ url_for('showItemDetails',category_id=category.category_id, id = category_item.id)}}" method = 'post'>
+
+
+	<p>Title:</p>
+        <input type ='text' size='30' name='title' placeholder = '{{category_item.title }}'>
+    <p>Description:</p>
+        <input type ='text' size='30' name='description' placeholder = '{{category_item.description }}'>
+    
+
+
+<input type='submit' value='Edit'>
+<a href = "{{ url_for('deleteCategoryItem', category_id=category.category_id, id = category_item.id) }}"> Delete </a>
+<a href = "{{ url_for('showCategoryItems', category_id=category.category_id) }}"> Cancel </a>
+
+</form>
+</body>
+
+</html>
