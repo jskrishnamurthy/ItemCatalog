@@ -25,8 +25,7 @@
 ### How to Run
 1. Install VirtualBox and Vagrant
 2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
-3.  Find the catalog folder and replace it with the content of this current repository, by either downloading or cloning it from
-  [Here](https://github.com/sagarchoudhary96/P5-Item-Catalog).
+3.  Find the catalog folder and replace it with the content of this current repository, by either downloading or cloning it.
 4. Launch Vagrant
 ```
 $ Vagrant up 
